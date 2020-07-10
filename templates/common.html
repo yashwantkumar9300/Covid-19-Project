@@ -1,0 +1,76 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+      <style>
+         #title
+         {
+             font-family: "Times New Roman";
+             font-size: 45px;
+             background-color: #FFCC99;
+             color: #660000;
+             padding: 5px;
+             text-align: center;
+         }
+          .help{
+              background-color: #660000;
+              text-align: center;
+              color: white;
+          }
+      </style>
+
+    <title> Covid 19-India </title>
+  </head>
+  <body>
+
+    <table align="center" border="0" width="100%" bgcolor="#fffacd">
+    <tr>
+        <th class="help"> For any COVID 19 related queries, call your State Helpline/Ministry of Health & Family Welfare's 24X7 helpline at 1075 or 011-23978046.</th>
+    </tr>
+        <tr>
+            <th id="title" height="100">
+                <img src="{% static 'images/Flag.gif' %}" width="59" height="70">
+                Covid 19 Tracking System, India
+                <img src="{% static 'images/Flag.gif' %}" width="59" height="62">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <TABLE align="center" border="0" width="100%">
+                    <tr>
+                        <th width="130" style="font-family: 'Times New Roman'; color: white ; background-color: #660000; text-align: center"> LATEST NEWS </th>
+                        <th style="background-color: bisque; color: blue; font-family: 'Times New Roman'; font-size: 20px">
+                           <marquee> <img src="{% static 'images/newicon.gif' %}" >Covid 19 Public Notice </marquee></th>
+                    </tr>
+                </TABLE>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                {% block pwn %}
+
+                {% endblock %}
+            </th>
+        </tr>
+        <tr>
+            <th style="text-align: center; color:white; background-color: #660000; font-family: 'Times New Roman'">
+                Copyright &copy 2020 Covid 19 Tracking System All Rights Reserved </th>
+        </tr>
+    </table>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

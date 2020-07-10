@@ -1,0 +1,38 @@
+
+
+{% extends 'common.html' %}
+
+{% block pwn %}
+    <style>
+        #states
+        {
+            font-size: 30px;
+            font-family: "Times New Roman";
+            color: white;
+            background-color: #660000;
+            padding: 5px;
+            text-align: center;
+        }
+        #states_list
+        {
+            text-align: center;
+            font-family: "Times New Roman";
+            font-size: 20px;
+        }
+    </style>
+
+    <table align="center" border="2" width="500" cellpadding="5">
+        <tr><th id="states">States In India</th></tr>
+        {% for x in data %}
+            <tr><th id="states_list">
+
+            <a href="{% url 'open_state' %}?state_name={{ x }}">
+                {{ x }}
+            </a>
+
+            </th></tr>
+        {% endfor %}
+    </table>
+
+    <br>
+{% endblock %}

@@ -1,0 +1,82 @@
+
+{% extends 'common.html' %}
+
+{% block pwn %}
+    {% load static %}
+    <style>
+        h1{
+            font-family: "Times New Roman";
+            font-size: 30px;
+            text-align: center;
+            background-color: #FFCC99;
+            color: #660000;
+        }
+        .district_list
+        {
+            text-align: center;
+            font-family: "Times New Roman";
+            font-size: 20px;
+            padding: 10px;
+            width: 100px;
+            color: yellow;
+            background-color: blue;
+        }
+    #dtitle
+    {
+        text-align: center;
+        font-family: "Times New Roman";
+        font-size: 20px;
+        padding: 10px;
+        width: 350px;
+        color: yellow;
+        background-color: blue;
+    }
+    .district_data
+    {
+        text-align: center;
+        font-family: "Times New Roman";
+        font-size: 20px;
+    }
+    .total_data{
+        text-align: center;
+        font-family: "Times New Roman";
+        font-size: 20px;
+        color: #660000;
+        background-color: #FFCC99;
+    }
+    </style>
+    <h1 style="text-align: center;font-family: 'Times New Roman'; font-size: 40px;"><b>{{ sname }} ----- State Code - {{ data.statecode }}</b></h1>
+              <h3 style="text-align: center"> <a href="{% url 'main' %}">
+                  <img src="{% static 'images/back.jpg' %}" height="30" width="30"> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="{% url 'refresh' %}?state_name={{ sname }}">
+                    <img src="{% static 'images/refresh.png' %}" height="30" width="30">
+              </a> </h3>
+
+    <table align="center" border="2" cellpadding="5">
+        <tr>
+            <th id="dtitle">District Name</th>
+            <th class="district_list">Active</th>
+            <th class="district_list">Confirmed</th>
+            <th class="district_list">Deceased</th>
+            <th class="district_list">Recovered</th>
+        </tr>
+
+        {% for x,y in data.districtData.items %}
+        <tr>
+            <th style="font-size: 20px; font-family: 'Times New Roman'"> {{ x }}</th>
+            <th class="district_data">{{ y.active }}</th>
+            <th class="district_data">{{ y.confirmed }}</th>
+            <th class="district_data" >{{ y.deceased }}</th>
+            <th class="district_data">{{ y.recovered }}</th>
+        </tr>
+        {% endfor %}
+        <tr>
+           <th style="font-size: 20px; font-family: 'Times New Roman'; color: #660000; background-color: #FFCC99"><b> Total </b> </th>
+            {% for x in total %}
+                <th class="total_data"> <b> {{ x }} </b></th>
+            {% endfor %}
+        </tr>
+
+    </table>
+    <br>
+{% endblock %}
